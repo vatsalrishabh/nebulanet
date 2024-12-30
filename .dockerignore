@@ -1,0 +1,6 @@
+node_modules
+.next
+.vscode
+npm-debug.log
+pnpm-lock.yaml
+.DS_Store
