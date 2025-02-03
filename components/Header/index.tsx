@@ -57,17 +57,17 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/logo-2.svg"
+                  src="/images/logo/nebulanet-2.png"
                   alt="logo"
                   width={140}
-                  height={30}
+                  height={20}
                   className="w-full dark:hidden"
                 />
                 <Image
-                  src="/images/logo/logo.svg"
+                  src="/images/logo/nebulanetlogo.png"
                   alt="logo"
                   width={140}
-                  height={30}
+                  height={20}
                   className="hidden w-full dark:block"
                 />
               </Link>

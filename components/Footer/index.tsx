@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <>
       <footer
-        className="wow fadeInUp dark:bg-gray-dark relative z-10 bg-white pt-16 md:pt-20 lg:pt-24"
+        className="wow fadeInUp relative z-10 bg-white pt-16 dark:bg-gray-dark md:pt-20 lg:pt-24"
         data-wow-delay=".1s"
       >
         <div className="container">
@@ -15,43 +15,45 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] lg:mb-16">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="/images/logo/logo-2.svg"
+                    src="/images/logo/nebulanet-2.png"
                     alt="logo"
                     className="w-full dark:hidden"
                     width={140}
                     height={30}
                   />
                   <Image
-                    src="/images/logo/logo.svg"
+                    src="/images/logo/nebulanetlogo.png"
                     alt="logo"
                     className="hidden w-full dark:block"
                     width={140}
                     height={30}
                   />
                 </Link>
-                <p className="dark:text-body-color-dark mb-9 text-base leading-relaxed text-body-color">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Integer lobortis.
+                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
+                  NebulaNet empowers businesses with cutting-edge web apps,
+                  native apps, and comprehensive social media marketing
+                  solutions.
                 </p>
                 <div className="flex items-center">
                   <a
-                    href="/"
-                    aria-label="social-link"
-                    className="dark:text-body-color-dark mr-6 text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                    href="https://www.instagram.com/nebulanet00?igsh=bzU2dXM5MDRxemxi"
+                    aria-label="instagram social-link"
+                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
-                      width="9"
+                      width="18"
                       height="18"
-                      viewBox="0 0 9 18"
+                      viewBox="0 0 24 24"
                       className="fill-current"
+                      xmlns="http://www.w3.org/2000/svg"
                     >
-                      <path d="M8.13643 7H6.78036H6.29605V6.43548V4.68548V4.12097H6.78036H7.79741C8.06378 4.12097 8.28172 3.89516 8.28172 3.55645V0.564516C8.28172 0.254032 8.088 0 7.79741 0H6.02968C4.11665 0 2.78479 1.58064 2.78479 3.92339V6.37903V6.94355H2.30048H0.65382C0.314802 6.94355 0 7.25403 0 7.70564V9.7379C0 10.1331 0.266371 10.5 0.65382 10.5H2.25205H2.73636V11.0645V16.7379C2.73636 17.1331 3.00273 17.5 3.39018 17.5H5.66644C5.81174 17.5 5.93281 17.4153 6.02968 17.3024C6.12654 17.1895 6.19919 16.9919 6.19919 16.8226V11.0927V10.5282H6.70771H7.79741C8.11222 10.5282 8.35437 10.3024 8.4028 9.96371V9.93548V9.90726L8.74182 7.95968C8.76604 7.7621 8.74182 7.53629 8.59653 7.31048C8.54809 7.16935 8.33016 7.02823 8.13643 7Z" />
+                      <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.7.5.7.3 1.3.7 1.8 1.3.6.5 1 1.1 1.3 1.8.3.7.5 1.5.5 2.7.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.5 2.7-.3.7-.7 1.3-1.3 1.8-.5.6-1.1 1-1.8 1.3-.7.3-1.5.5-2.7.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.7-.5-.7-.3-1.3-.7-1.8-1.3-.6-.5-1-1.1-1.3-1.8-.3-.7-.5-1.5-.5-2.7-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.2.2-2 .5-2.7.3-.7.7-1.3 1.3-1.8.5-.6 1.1-1 1.8-1.3.7-.3 1.5-.5 2.7-.5 1.3-.1 1.7-.1 4.9-.1zm0-2.2C8.7 0 8.3 0 7 .1 5.7.1 4.7.3 3.8.7c-.9.4-1.7.9-2.5 1.7-.8.8-1.3 1.6-1.7 2.5-.4.9-.6 1.9-.7 3.2C0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.3.7 3.2.4.9.9 1.7 1.7 2.5.8.8 1.6 1.3 2.5 1.7.9.4 1.9.6 3.2.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.3-.3 3.2-.7.9-.4 1.7-.9 2.5-1.7.8-.8 1.3-1.6 1.7-2.5.4-.9.6-1.9.7-3.2.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.3-.7-3.2-.4-.9-.9-1.7-1.7-2.5-.8-.8-1.6-1.3-2.5-1.7-.9-.4-1.9-.6-3.2-.7C15.7 0 15.3 0 12 0zm0 5.8a6.2 6.2 0 1 0 0 12.4 6.2 6.2 0 0 0 0-12.4zm0 10.2a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.4-10.8a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
                     </svg>
                   </a>
                   <a
-                    href="/"
-                    aria-label="social-link"
-                    className="dark:text-body-color-dark mr-6 text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                    href="https://x.com/nebulanet0"
+                    aria-label="twitter social-link"
+                    className="mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
                       width="19"
@@ -63,9 +65,9 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://www.youtube.com/@NebulaNet0"
                     aria-label="social-link"
-                    className="dark:text-body-color-dark mr-6 text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                    className="youtube mr-6 text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
                       width="18"
@@ -77,9 +79,9 @@ const Footer = () => {
                     </svg>
                   </a>
                   <a
-                    href="/"
+                    href="https://www.linkedin.com/company/nebulanet/"
                     aria-label="social-link"
-                    className="dark:text-body-color-dark text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                    className="text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                   >
                     <svg
                       width="17"
@@ -103,7 +105,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/blogs"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Blog
                     </a>
@@ -111,7 +113,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/pricing"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Pricing
                     </a>
@@ -119,7 +121,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       About
                     </a>
@@ -137,7 +139,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       TOS
                     </a>
@@ -145,7 +147,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Privacy Policy
                     </a>
@@ -153,7 +155,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Refund Policy
                     </a>
@@ -171,7 +173,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/contact"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Open Support Ticket
                     </a>
@@ -179,7 +181,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       Terms of Use
                     </a>
@@ -187,7 +189,7 @@ const Footer = () => {
                   <li>
                     <a
                       href="/about"
-                      className="dark:text-body-color-dark mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:hover:text-primary"
+                      className="mb-4 inline-block text-base text-body-color duration-300 hover:text-primary dark:text-body-color-dark dark:hover:text-primary"
                     >
                       About
                     </a>
@@ -200,9 +202,9 @@ const Footer = () => {
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-              Template by UIdeck and{" "}
-              <a href="https://nextjstemplates.com" rel="nofollow noopener">
-                Next.js Templates
+              Template by NebulaNet and{" "}
+              <a href="https://nebulanet.in" rel="nofollow noopener">
+                Templates
               </a>
             </p>
           </div>
