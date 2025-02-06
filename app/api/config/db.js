@@ -1,24 +1,4 @@
-// import mongoose from 'mongoose';
 
-// const connectDb = (handler) => async (req, res) => {
-//   if (mongoose.connections[0].readyState) {
-//     return handler(req, res); // If already connected, proceed
-//   }
-
-//   try {
-//     await mongoose.connect('mongodb+srv://Dimpleusername:HvN71w7U9p2tcIEj@cluster0.sduwnxh.mongodb.net/Nebulanet', {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true,
-//     });
-//     console.log('MongoDB connected');
-//     return handler(req, res); // Proceed once connected
-//   } catch (error) {
-//     console.error('MongoDB connection error:', error);
-//     res.status(500).json({ message: 'Database connection failed' });
-//   }
-// };
-
-// export default connectDb;
 
 import mongoose from "mongoose";
 
@@ -27,7 +7,7 @@ import mongoose from "mongoose";
 //   var mongoose: any; // This must be a `var` and not a `let / const`
 // }
 
-const MONGODB_URI = 'mongodb+srv://Dimpleusername:HvN71w7U9p2tcIEj@cluster0.sduwnxh.mongodb.net/Nebulanet';
+const MONGODB_URI = process.env.MONGO_URI;
 
 if (!MONGODB_URI) {
   throw new Error(
