@@ -6,8 +6,8 @@ import mongoose from "mongoose";
 // declare global {
 //   var mongoose: any; // This must be a `var` and not a `let / const`
 // }
-
-const MONGODB_URI = process.env.MONGO_URI;
+// const MONGODB_URI = process.env.MONGO_URI;
+const MONGODB_URI = 'mongodb+srv://Dimpleusername:HvN71w7U9p2tcIEj@cluster0.sduwnxh.mongodb.net/Nebulanet';
 
 if (!MONGODB_URI) {
   throw new Error(
