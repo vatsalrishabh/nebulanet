@@ -3,45 +3,46 @@ import { Blog } from "@/types/blog";
 const blogData: Blog[] = [
   {
     id: 1,
-    title: "Best UI components for modern websites",
+    title: "Building Scalable Web Solutions with Nebulanet",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Nebulanet offers innovative cloud solutions that help businesses scale effectively. Learn how to leverage Nebulanet's platform to build scalable, high-performance websites and apps.",
     image: "/images/blog/blog-01.jpg",
     author: {
       name: "Samuyl Joshi",
       image: "/images/blog/author-01.png",
-      designation: "Graphic Designer",
+      designation: "Lead Developer at Nebulanet",
     },
-    tags: ["creative"],
+    tags: ["cloud", "scalable"],
     publishDate: "2025",
   },
   {
     id: 2,
-    title: "9 simple ways to improve your design skills",
+    title: "Top Features of Nebulanet’s Hosting Platform",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Discover the top features of Nebulanet's hosting platform, including its seamless deployment process, high uptime, and enhanced security. Learn why Nebulanet is the preferred choice for developers and businesses alike.",
     image: "/images/blog/blog-02.jpg",
     author: {
       name: "Musharof Chy",
       image: "/images/blog/author-02.png",
-      designation: "Content Writer",
+      designation: "Technical Writer at Nebulanet",
     },
-    tags: ["computer"],
+    tags: ["hosting", "performance"],
     publishDate: "2025",
   },
   {
     id: 3,
-    title: "Tips to quickly improve your coding speed.",
+    title: "How to Optimize Your Website for Nebulanet’s Infrastructure",
     paragraph:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sit amet dictum neque, laoreet dolor.",
+      "Optimizing your website for Nebulanet’s infrastructure can improve performance and reduce loading times. Learn the best practices for integrating Nebulanet's cloud services and taking advantage of its robust features.",
     image: "/images/blog/blog-03.jpg",
     author: {
       name: "Lethium Deo",
       image: "/images/blog/author-03.png",
-      designation: "Graphic Designer",
+      designation: "Cloud Architect at Nebulanet",
     },
-    tags: ["design"],
+    tags: ["performance", "optimization"],
     publishDate: "2025",
   },
 ];
+
 export default blogData;

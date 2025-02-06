@@ -3,6 +3,7 @@ import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import OfferList from "./OfferList";
 import PricingBox from "./PricingBox";
+import {pricingDataWeb, pricingDataApp, pricingDataHosting, pricingDataMarketing} from "./pricingData"
 
 const Pricing = () => {
   const [isMonthly, setIsMonthly] = useState(true);
@@ -61,20 +62,65 @@ const Pricing = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-x-8 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
-          <PricingBox
-            packageName="Lite"
-            price={isMonthly ? "40" : "120"}
-            duration={isMonthly ? "project" : "yr"}
-            subtitle="Lorem ipsum dolor sit amet adiscing elit Mauris egestas enim."
-          >
-            <OfferList text="All UI Components" status="active" />
-            <OfferList text="Use with Unlimited Projects" status="active" />
-            <OfferList text="Commercial Use" status="active" />
-            <OfferList text="Email Support" status="active" />
-            <OfferList text="Lifetime Access" status="inactive" />
-            <OfferList text="Free Lifetime Updates" status="inactive" />
-          </PricingBox>
-          <PricingBox
+        {pricingDataWeb.map((item, index) => (
+  <PricingBox
+    key={index}
+    packageName={item.packageName}
+    price={`${item.priceRange.min} - ${item.priceRange.max}`}
+    duration={item.duration}
+    subtitle={item.subtitle}
+  >
+    {item.features.map((feature, i) => (
+      <OfferList key={i} text={feature.text} status={feature.status} />
+    ))}
+  </PricingBox>
+))}
+
+
+{pricingDataApp.map((item, index) => (
+  <PricingBox
+    key={index}
+    packageName={item.packageName}
+    price={`${item.priceRange.min} - ${item.priceRange.max}`}
+    duration={item.duration}
+    subtitle={item.subtitle}
+  >
+    {item.features.map((feature, i) => (
+      <OfferList key={i} text={feature.text} status={feature.status} />
+    ))}
+  </PricingBox>
+))}
+
+{pricingDataHosting.map((item, index) => (
+  <PricingBox
+    key={index}
+    packageName={item.packageName}
+    price={`${item.priceRange.min} - ${item.priceRange.max}`}
+    duration={item.duration}
+    subtitle={item.subtitle}
+  >
+    {item.features.map((feature, i) => (
+      <OfferList key={i} text={feature.text} status={feature.status} />
+    ))}
+  </PricingBox>
+))}
+
+{pricingDataMarketing.map((item, index) => (
+  <PricingBox
+    key={index}
+    packageName={item.packageName}
+    price={`${item.priceRange.min} - ${item.priceRange.max}`}
+    duration={item.duration}
+    subtitle={item.subtitle}
+  >
+    {item.features.map((feature, i) => (
+      <OfferList key={i} text={feature.text} status={feature.status} />
+    ))}
+  </PricingBox>
+))}
+ 
+         
+          {/* <PricingBox
             packageName="Basic"
             price={isMonthly ? "399" : "789"}
             duration={isMonthly ? "mo" : "yr"}
@@ -99,7 +145,7 @@ const Pricing = () => {
             <OfferList text="Email Support" status="active" />
             <OfferList text="Lifetime Access" status="active" />
             <OfferList text="Free Lifetime Updates" status="active" />
-          </PricingBox>
+          </PricingBox> */}
         </div>
       </div>
 

@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "NebulaNet - Empowering Businesses with Innovative Tech",
     description: "NebulaNet is a leading startup SaaS platform providing innovative and scalable technology solutions to empower businesses.",
-    url: "https://www.nebulanet.com",  // Replace with your actual domain
+    url: "https://www.nebulanet.in",  // Replace with your actual domain
   
     images: [
       {
