@@ -9,7 +9,7 @@ const Features = () => {
         <div className="container">
           <SectionTitle
             title="Our Services"
-            paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+            paragraph="NebulaNet offers cutting-edge solutions with seamless integration, ensuring efficiency and innovation in every aspect."
             center
           />
 
