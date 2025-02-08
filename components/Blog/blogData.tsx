@@ -8,7 +8,7 @@ const blogData: Blog[] = [
       "Nebulanet offers innovative cloud solutions that help businesses scale effectively. Learn how to leverage Nebulanet's platform to build scalable, high-performance websites and apps.",
     image: "/images/blog/blog-01.jpg",
     author: {
-      name: "Vatsal Rishabh",
+      name: "Neha Roy",
       image: "/images/blog/author-01.png",
       designation: "Lead Developer at Nebulanet",
     },
@@ -36,7 +36,7 @@ const blogData: Blog[] = [
       "Optimizing your website for Nebulanet’s infrastructure can improve performance and reduce loading times. Learn the best practices for integrating Nebulanet's cloud services and taking advantage of its robust features.",
     image: "/images/blog/blog-03.jpg",
     author: {
-      name: "Henry Richard",
+      name: "Vatsal Rishabh",
       image: "/images/blog/author-03.png",
       designation: "Cloud Architect at Nebulanet",
     },
