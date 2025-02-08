@@ -1,7 +1,7 @@
 export const pricingDataWeb = [
     {
       packageName: "Basic",
-      priceRange: { min: 10000, max: 25000 },
+      priceRange: { min: 10, max: 25 },
       duration: "project",
       subtitle: "5 Pages, Static, Hosting (1 Year)",
       features: [
@@ -15,7 +15,7 @@ export const pricingDataWeb = [
     },
     {
       packageName: "Standard",
-      priceRange: { min: 30000, max: 60000 },
+      priceRange: { min: 30, max: 60 },
       duration: "project",
       subtitle: "Dynamic, CMS, Basic SEO",
       features: [
@@ -30,8 +30,8 @@ export const pricingDataWeb = [
   
   export const pricingDataApp = [
     {
-      packageName: "Basic (Hybrid App)",
-      priceRange: { min: 50000, max: 100000 },
+      packageName: "Hybrid App",
+      priceRange: { min: 50, max: 100 },
       duration: "project",
       subtitle: "React Native/Flutter",
       features: [
@@ -41,8 +41,8 @@ export const pricingDataWeb = [
       ],
     },
     {
-      packageName: "Native Android/iOS",
-      priceRange: { min: 80000, max: 250000 },
+      packageName: " Andr../iOS",
+      priceRange: { min: 80, max: 250 },
       duration: "project",
       subtitle: "Advanced UI, Firebase, API",
       features: [
@@ -56,7 +56,7 @@ export const pricingDataWeb = [
   export const pricingDataHosting = [
     {
       packageName: "Shared Hosting",
-      priceRange: { min: 500, max: 1500 },
+      priceRange: { min: 5, max: 1.5 },
       duration: "monthly",
       subtitle: "₹5,000 - ₹12,000 yearly",
       features: [
@@ -66,7 +66,7 @@ export const pricingDataWeb = [
     },
     {
       packageName: "VPS Hosting",
-      priceRange: { min: 2000, max: 5000 },
+      priceRange: { min: 2, max: 5 },
       duration: "monthly",
       subtitle: "₹20,000 - ₹50,000 yearly",
       features: [
@@ -79,7 +79,7 @@ export const pricingDataWeb = [
   export const pricingDataMarketing = [
     {
       packageName: "Basic",
-      priceRange: { min: 15000, max: 15000 },
+      priceRange: { min: 15, max: 15},
       duration: "monthly",
       subtitle: "12 Posts, Hashtags, Engagement",
       features: [
@@ -89,7 +89,7 @@ export const pricingDataWeb = [
     },
     {
       packageName: "SEO Package",
-      priceRange: { min: 20000, max: 50000 },
+      priceRange: { min: 20, max: 50 },
       duration: "project",
       subtitle: "Keyword Research, Backlinks",
       features: [
