@@ -5,13 +5,13 @@ import { indianCities } from "@/lib/indianCities";
 
 export async function generateStaticParams() {
   return indianCities.map((city) => ({
-    city: city.toLowerCase().replace(/\s+/g, '-'),
+    city: city.toLowerCase().replace(/\s+/g, "-"),
   }));
 }
 
 export async function generateMetadata({ params }) {
-  const city = decodeURIComponent(params.city).replace(/-/g, ' ');
- return {
+  const city = decodeURIComponent(params.city).replace(/-/g, " ");
+  return {
     title: `Top Web Developers, Designers & Marketing Experts in ${city}`,
     description: `Hire the best software developers, web designers, logo designers, and SEO experts in ${city}. We provide top-notch digital services across India.`,
     keywords: [
@@ -23,7 +23,7 @@ export async function generateMetadata({ params }) {
       `freelance developer in ${city}`,
       `logo designer in ${city}`,
       `top web development company ${city}`,
-      `hire developer near ${city}`
+      `hire developer near ${city}`,
     ],
     alternates: {
       canonical: `https://nebulanet.in/web-developer/${params.city}`,
@@ -48,7 +48,7 @@ export async function generateMetadata({ params }) {
 }
 
 const CityDeveloperPage = ({ params }) => {
-  const city = decodeURIComponent(params.city).replace(/-/g, ' ');
+  const city = decodeURIComponent(params.city).replace(/-/g, " ");
 
   if (!city) return notFound();
 
@@ -57,7 +57,7 @@ const CityDeveloperPage = ({ params }) => {
       <div className="container mx-auto px-4">
         <div className="mb-10 text-center">
           <h1 className="text-3xl md:text-4xl font-bold text-custom-maroon">
-            Your One-Stop Web & Marketing Team in {city}
+            Your One-Stop Web &amp; Marketing Team in {city}
           </h1>
           <p className="mt-4 text-base text-body-color max-w-2xl mx-auto">
             Get high-quality software development, creative branding, digital marketing, and SEO services tailored to clients in {city}. Rated among the top developers in India.
@@ -85,8 +85,7 @@ const CityDeveloperPage = ({ params }) => {
             Why Hire Us in {city}?
           </h2>
           <p className="text-base text-body-color max-w-3xl mx-auto">
-            With experience across 100+ projects, our team delivers exceptional results to clients across India.
-            Get the best development, marketing, and branding solutions tailored to {city}'s unique market.
+            With experience across 100+ projects, our team delivers exceptional results to clients across India. Get the best development, marketing, and branding solutions tailored to {city}&apos;s unique market.
           </p>
         </div>
       </div>

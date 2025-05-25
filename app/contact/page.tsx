@@ -29,7 +29,7 @@ const ContactPage = () => {
     <>
       <Breadcrumb 
         pageName="Contact Us" 
-        description="Get in touch with NebulaNet for expert web development, mobile apps, and digital marketing solutions. Whether you need a website, an app, or SEO strategies to grow your business, we're here to help!" 
+        description="Get in touch with NebulaNet for expert web development, mobile apps, and digital marketing solutions. Whether you need a website, an app, or SEO strategies to grow your business, We&#39;re here to help!" 
       />
       <Contact />
     </>
