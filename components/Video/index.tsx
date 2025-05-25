@@ -14,7 +14,7 @@ const Video = () => {
       <div className="container">
         <SectionTitle
           title="We are ready to help"
-          paragraph="NebulaNet provides innovative and scalable solutions, ensuring seamless integration and efficiency for businesses of all sizes."
+          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
           center
           mb="80px"
         />
