@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 
 // Icons
@@ -23,8 +24,10 @@ const LeftLaptoSideNav = () => {
   const router = useRouter();
 
   // Logout function
+  const COOKIE_NAME = "adminSession";
   const adminLogout = () => {
     localStorage.removeItem("adminDetails"); // Clear admin details
+     Cookies.remove(COOKIE_NAME);
     router.push("/"); // Redirect to home page
   };
 

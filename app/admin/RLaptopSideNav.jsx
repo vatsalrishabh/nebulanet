@@ -23,7 +23,7 @@ const breadcrumbLinks = [
   ];
 const RLaptopSideNav = () => {
   return (
-    <div className="lg:w-[83%] w-full absolute right-0 h-[100vh] bg-slate-200 p-6">
+    <div className="lg:w-[84%] z-50 w-full absolute right-0 h-[100vh] bg-slate-200 p-6">
       {/* Grid Layout: 3 Columns on Large Screens, 1 Column on Small Screens */}
       <div className="p-4">
       <AdminBreadCrumbs links={breadcrumbLinks} name="Admin Dashboard" />
