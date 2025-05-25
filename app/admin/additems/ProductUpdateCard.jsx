@@ -2,6 +2,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
+import Image from "next/image";
 
 const ProductUpdateCard = ({ productId, productImg, productName, setProductId }) => {
   // Function to set product ID in the parent component
