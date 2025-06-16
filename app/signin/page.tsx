@@ -10,6 +10,7 @@ import {
 } from "../../redux/auth/authSlice";
 import { Metadata } from "next";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const SigninPage = () => {
   const { data: session } = useSession();
@@ -51,11 +52,13 @@ const SigninPage = () => {
                   <div className="mb-6 flex flex-col items-center justify-center gap-4 text-center">
                     {/* ✅ User Avatar */}
                     {session.user?.image && (
-                      <img
-                        src={session.user.image}
-                        alt="User Avatar"
-                        className="h-20 w-20 rounded-full border-2 border-primary shadow-lg"
-                      />
+                  <Image
+  src={session.user.image}
+  alt="User Avatar"
+  width={80}
+  height={80}
+  className="rounded-full border-2 border-primary shadow-lg"
+/>
                     )}
 
                     {/* ✅ User Info */}
