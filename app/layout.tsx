@@ -8,8 +8,14 @@ import Script from "next/script";
 import { Providers } from "./providers";
 import "node_modules/react-modal-video/css/modal-video.css";
 import "../styles/index.css";
+import { SessionProvider } from "next-auth/react";
+import { Provider } from "react-redux"; // the react store provider
+import { store } from "../redux/store"; // Uncomment if you have a Redux store setup
 
 const inter = Inter({ subsets: ["latin"] });
+
+// ✅ Declare session as any = undefined
+const session: any = undefined;
 
 export default function RootLayout({
   children,
@@ -44,10 +50,15 @@ export default function RootLayout({
 
       <body className={`bg-[#FCFCFC] dark:bg-black ${inter.className}`}>
         <Providers>
-          <Header />
-          <ScrollToTop />
-          {children}
-          <Footer />
+          <SessionProvider session={session}>
+            <Provider store={store}>
+              {/* This is where you can add Redux store if needed */}
+            <Header />
+            <ScrollToTop />
+            {children}
+            <Footer />
+            </Provider>
+          </SessionProvider>
         </Providers>
       </body>
     </html>

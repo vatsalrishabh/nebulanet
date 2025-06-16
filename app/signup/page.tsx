@@ -1,14 +1,33 @@
+"use client";
+
+import { useState, useEffect, use } from "react";
 import Link from "next/link";
-
-import { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Sign Up Page | Free Next.js Template for Startup and SaaS",
-  description: "This is Sign Up Page for Startup Nextjs Template",
-  // other metadata
-};
+import { signIn, signOut, useSession } from "next-auth/react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  loginRequest,
+  loginSuccess,
+  loginFailure,
+  logout,
+} from "../../redux/auth/authSlice";
 
 const SignupPage = () => {
+  const { data: session } = useSession();
+  const dispatch = useDispatch();
+  const { user, isLoading, error } = useSelector((state: any) => state.auth);
+  console.log("User Data:", user);
+  console.log("Is Loading:", isLoading);
+  console.log("Error:", error);
+  console.log("Session Status:", session ? "Active" : "Not Active");
+
+  useEffect(() => {
+    if (session?.user) {
+      dispatch(loginSuccess(session.user));
+      console.log("User synced to Redux:", session.user);
+    }
+  }, [session, dispatch]);
+
+
   return (
     <>
       <section className="relative z-10 overflow-hidden pb-16 pt-36 md:pb-20 lg:pb-28 lg:pt-[180px]">
@@ -17,12 +36,56 @@ const SignupPage = () => {
             <div className="w-full px-4">
               <div className="shadow-three mx-auto max-w-[500px] rounded bg-white px-6 py-10 dark:bg-dark sm:p-[60px]">
                 <h3 className="mb-3 text-center text-2xl font-bold text-black dark:text-white sm:text-3xl">
-                  Create your account
+             {session ? "Welcome back!" :  "Create your account"}
+                 
                 </h3>
                 <p className="mb-11 text-center text-base font-medium text-body-color">
-                  It’s totally free and super easy
+                     {session
+                    ? `You're successfully signed in as ${
+                        session.user.name || "a user"
+                      }. Enjoy your experience!`
+                    : " It’s totally free and super easy"}
                 </p>
-                <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
+
+
+  {session ? (
+                  <div className="mb-6 flex flex-col items-center justify-center gap-4 text-center">
+                    {/* ✅ User Avatar */}
+                    {session.user?.image && (
+                      <img
+                        src={session.user.image}
+                        alt="User Avatar"
+                        className="h-20 w-20 rounded-full border-2 border-primary shadow-lg"
+                      />
+                    )}
+
+                    {/* ✅ User Info */}
+                    <div>
+                      <p className="text-base font-medium text-gray-800 dark:text-gray-200">
+                        Signed in as
+                      </p>
+                      <p className="text-lg font-semibold text-black dark:text-white">
+                        {session.user?.name}
+                      </p>
+                      <p className="text-sm text-gray-500 dark:text-gray-400">
+                        {session.user?.email}
+                      </p>
+                    </div>
+
+                    {/* ✅ Sign Out Button */}
+                    <button
+                      onClick={() => {
+                        signOut();
+                        dispatch(logout());
+                        console.log("User signed out");
+                      }}
+                      className="rounded bg-primary px-6 py-2 text-white transition hover:bg-primary/90"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                ) : (
+                <button onClick={()=>signIn("google")} className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
                   <span className="mr-3">
                     <svg
                       width="20"
@@ -58,8 +121,12 @@ const SignupPage = () => {
                   </span>
                   Sign in with Google
                 </button>
+                )}
 
-                <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
+
+              
+
+                {/* <button className="border-stroke dark:text-body-color-dark dark:shadow-two mb-6 flex w-full items-center justify-center rounded-sm border bg-[#f8f8f8] px-6 py-3 text-base text-body-color outline-none transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:text-primary dark:border-transparent dark:bg-[#2C303B] dark:hover:border-primary dark:hover:bg-primary/5 dark:hover:text-primary dark:hover:shadow-none">
                   <span className="mr-3">
                     <svg
                       fill="currentColor"
@@ -181,7 +248,7 @@ const SignupPage = () => {
                   <Link href="/signin" className="text-primary hover:underline">
                     Sign in
                   </Link>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
