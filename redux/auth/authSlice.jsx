@@ -1,4 +1,4 @@
-// redux/auth/authSlice.ts
+// redux/auth/authSlice.jsx
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
