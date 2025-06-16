@@ -1,7 +1,7 @@
 // app/api/leadGeneration/chromeMapExtension/route.js
 import { NextResponse } from 'next/server';
-import connectDb from '@/config/db';
-import Lead from '@/models/Lead';
+import connectDb from '../../config/db';
+import Lead from '../../models/Leads';
 
 // @POST - /api/leadGeneration/chromeMapExtension
 export async function POST(request) {
