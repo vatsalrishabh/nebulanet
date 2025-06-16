@@ -33,7 +33,12 @@ const menuData: Menu[] = [
     path: "/courses",
     newTab: false,
   },
-
+ {
+    id: 6,
+    title: "Sign In/Sign Up",
+    path: "/signin",
+    newTab: false,
+  },
   // {
   //   id: 4,
   //   title: "Pages",
