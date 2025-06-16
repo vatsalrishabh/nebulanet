@@ -20,16 +20,13 @@ const Header = () => {
   const dispatch = useDispatch();
   const { user, isLoading, error } = useSelector((state: any) => state.auth);
 
-  console.log("User Data:", user);
-  console.log("Is Loading:", isLoading);
-  console.log("Error:", error);
-  console.log("Session Status:", session ? "Active" : "Not Active");
-
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
   const [openIndex, setOpenIndex] = useState(-1);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const dropdownRef = useRef(null);
+  const navRef = useRef(null);
   const pathName = usePathname();
 
   const navbarToggleHandler = () => setNavbarOpen(!navbarOpen);
@@ -47,8 +44,15 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleStickyNavbar);
   }, []);
 
+  // Close mobile nav if clicked outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navRef.current &&
+        !(navRef.current as HTMLElement).contains(event.target as Node)
+      ) {
+        setNavbarOpen(false);
+      }
       if (
         dropdownRef.current &&
         !(dropdownRef.current as HTMLElement).contains(event.target as Node)
@@ -56,6 +60,7 @@ const Header = () => {
         setDropdownOpen(false);
       }
     };
+
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -118,6 +123,7 @@ const Header = () => {
                 />
               </button>
               <nav
+                ref={navRef}
                 id="navbarCollapse"
                 className={`navbar absolute right-0 z-30 w-[250px] rounded border-[.5px] border-body-color/50 bg-white px-6 py-4 duration-300 dark:border-body-color/20 dark:bg-dark lg:visible lg:static lg:w-auto lg:border-none lg:!bg-transparent lg:p-0 lg:opacity-100 ${
                   navbarOpen
@@ -131,6 +137,7 @@ const Header = () => {
                       {menuItem.path ? (
                         <Link
                           href={menuItem.path}
+                          onClick={() => setNavbarOpen(false)}
                           className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
                             pathName === menuItem.path
                               ? "text-primary dark:text-white"
@@ -142,7 +149,10 @@ const Header = () => {
                       ) : (
                         <>
                           <p
-                            onClick={() => handleSubmenu(index)}
+                            onClick={() => {
+                              handleSubmenu(index);
+                              setNavbarOpen(false);
+                            }}
                             className="flex cursor-pointer items-center justify-between py-2 text-base text-dark group-hover:text-primary dark:text-white/70 dark:group-hover:text-white lg:mr-0 lg:inline-flex lg:px-0 lg:py-6"
                           >
                             {menuItem.title}
@@ -166,6 +176,7 @@ const Header = () => {
                               <Link
                                 href={submenuItem.path}
                                 key={subIndex}
+                                onClick={() => setNavbarOpen(false)}
                                 className="block rounded py-2.5 text-sm text-dark hover:text-primary dark:text-white/70 dark:hover:text-white lg:px-3"
                               >
                                 {submenuItem.title}
@@ -181,7 +192,10 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-end pr-16 lg:pr-0">
               {session ? (
-                <div className="relative flex items-center space-x-4" ref={dropdownRef}>
+                <div
+                  className="relative flex items-center space-x-4"
+                  ref={dropdownRef}
+                >
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className="flex items-center space-x-2 text-dark hover:text-primary dark:text-white"
@@ -193,7 +207,9 @@ const Header = () => {
                       height={40}
                       className="rounded-full"
                     />
-                    <span className="hidden lg:inline-block">{session.user?.name || "User"}</span>
+                    <span className="hidden lg:inline-block">
+                      {session.user?.name || "User"}
+                    </span>
                   </button>
                   {dropdownOpen && (
                     <div className="absolute right-0 lg:mt-32 w-48 rounded-md bg-white shadow-lg dark:bg-gray-800 z-50">
